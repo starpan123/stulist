@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %} 
+  学生清单  
+{% end %}
+
+{% block content %}
+	<a href="stuedit/new">新增学生</a>
+	<hr>
+	<table>
+		<tr>
+			<th>学号</th>
+			<th>姓名</th>
+			<th>性别</th>
+			<th>出生日期</th>
+			<th>班级</th>
+		</tr>
+		{% for stu in students %}
+		<tr>
+			<td>{{ stu['sno'] }}</td>
+			<td>{{ stu['sname'] }}</td>
+			<td>{{ stu['sex'] }}</td>
+			<td>{{ stu['sbir'] }}</td>
+			<td>{{ stu['cla'] }}</td>
+			<td>
+				<a href="stuedit/{{stu['stu_sn']}}"> 修改 </a> &nbsp;
+				<a href="studel/{{stu['stu_sn']}}"> 删除 </a>
+			</td>
+		</tr>
+		{% end %}
+	</table> 
+{% end %}

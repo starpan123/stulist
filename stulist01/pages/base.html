@@ -1,0 +1,46 @@
+<html>
+  <head>
+  <style type="text/css">
+table
+  {
+  border-collapse:collapse;
+  }
+
+table, td, th
+  {
+  border:1px solid green;
+  }
+   th 
+  {
+  background-color:#A7C942;
+  color:#ffffff;
+  }
+  tr.alt td 
+  {
+  color:#000000;
+  background-color:#C0C0CC;
+  }
+  table {margin: 0 auto;}
+</style>
+    <title>{% block title %}缺省标题{% end %}</title>
+    {% block js %}{% end %} 
+  </head>
+  <body background="http://web.ptjy.com/web/usersite/xyxdjzx/UploadFiles/20121009215629116.jpg">
+    <table border=1 width=43%>
+      <tr style="height=100px;">
+        <th colspan=2>Header</th> </tr>
+      <tr >
+        <td style='width:10em'>学生清单
+        <ul>
+          <li><a href="/">返回主页</a></li>
+          <li><a href="/stulist">学生信息</a></li>
+        </ul>
+        </td>
+        <td>
+        {% block content %}
+        {% end %}          
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
